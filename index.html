@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Life Dashboard</title>
+    
+    <link rel="stylesheet" href="css/style.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body id="app-body">
+    
+    <div class="dashboard-container">
+        <header class="top-header">
+            <button id="theme-toggle" class="icon-btn" title="Toggle Light/Dark Mode">
+                <i class="fas fa-moon"></i>
+            </button>
+        </header>
+
+        <section class="widget greeting-widget">
+            <h1 id="clock">00:00</h1>
+            <p id="date">Loading date...</p>
+            <div class="greeting-container">
+                <span id="greeting-text">Good morning,</span>
+                <span id="user-name" contenteditable="true" spellcheck="false" title="Click to edit your name">User</span>
+            </div>
+        </section>
+
+        <div class="grid-layout">
+            <section class="widget timer-widget">
+                <h2>Focus Timer</h2>
+                <div class="timer-display" id="timer-display">25:00</div>
+                
+                <div class="timer-controls">
+                    <button id="btn-start" class="btn primary">Start</button>
+                    <button id="btn-pause" class="btn">Pause</button>
+                    <button id="btn-reset" class="btn">Reset</button>
+                </div>
+                
+                <div class="timer-settings">
+                    <label for="custom-time">Set Minutes:</label>
+                    <input type="number" id="custom-time" value="25" min="1" max="120">
+                </div>
+            </section>
+
+            <section class="widget todo-widget">
+                <h2>Tasks for Today</h2>
+                <form id="todo-form" class="input-group">
+                    <input type="text" id="todo-input" placeholder="What needs to be done?" autocomplete="off">
+                    <button type="submit" class="btn primary"><i class="fas fa-plus"></i></button>
+                </form>
+                <ul id="todo-list" class="task-list">
+                    </ul>
+            </section>
+
+            <section class="widget links-widget">
+                <h2>Quick Links</h2>
+                <div id="links-container" class="links-grid">
+                    </div>
+                <form id="link-form" class="input-group mt-3">
+                    <input type="text" id="link-name" placeholder="Name (e.g. Google)" required>
+                    <input type="url" id="link-url" placeholder="URL (https://...)" required>
+                    <button type="submit" class="btn primary"><i class="fas fa-plus"></i></button>
+                </form>
+            </section>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
